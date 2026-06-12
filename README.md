@@ -26,8 +26,8 @@ engineering-playbook
 │
 ├── product
 │   ├── feature-guidelines.md
-│   ├── [us-guidelines.md](product/us-guidelines.md)
-│   └── [us-template.md](product/us-template.md)
+│   ├── us-guidelines.md
+│   └── us-template.md
 │
 ├── development
 │   ├── coding-standards.md
@@ -65,7 +65,7 @@ Documentação relacionada à definição e decomposição de requisitos.
 | --------------------- | -------------------------------------------------- |
 | feature-guidelines.md | Padrões para criação de Features                   |
 | [us-guidelines.md](product/us-guidelines.md) | Regras para criação e decomposição de User Stories |
-| us-template.md        | Template oficial de User Story                     |
+| [us-template.md](product/us-template.md)        | Template oficial de User Story                     |
 
 ---
 
