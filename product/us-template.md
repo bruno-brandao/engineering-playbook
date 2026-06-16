@@ -1,5 +1,3 @@
-# US_TEMPLATE.md
-
 # Título
 
 Seguir a convenção:
