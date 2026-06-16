@@ -40,6 +40,9 @@ Implementar endpoint responsável pela consulta paginada de perfis de acesso.
 
 # Regras de Negócio
 
+Descrever o comportamento esperado do sistema de forma objetiva e sem ambiguidades.
+Evitar regras genéricas ou que exijam interpretação do desenvolvedor.
+
 ## RN01
 
 [Descrição da regra]
@@ -79,6 +82,53 @@ Dado que ...
 Quando ...
 
 Então ...
+
+---
+
+# Exemplos de Negócio (Opcional)
+
+Utilizar quando as regras envolverem:
+
+* cálculos;
+* datas;
+* períodos;
+* aprovações;
+* integrações;
+* ordenações;
+* priorizações;
+* regras condicionais;
+* fluxos complexos;
+* qualquer situação que possa gerar interpretações diferentes.
+
+## Exemplo 01
+
+### Cenário
+
+[Descrição]
+
+### Entrada
+
+[Dado de entrada]
+
+### Resultado Esperado
+
+[Resultado esperado]
+
+---
+
+## Exemplo 02
+
+### Cenário
+
+[Descrição]
+
+### Entrada
+
+[Dado de entrada]
+
+### Resultado Esperado
+
+[Resultado esperado]
 
 ---
 
