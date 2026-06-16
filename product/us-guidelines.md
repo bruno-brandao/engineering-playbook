@@ -25,7 +25,7 @@ Ela deve conter:
 * Protótipos;
 * Aprovação do negócio.
 
-## [User Story](us-template.md) (US)
+## User Story (US)
 
 A User Story é o artefato utilizado pelo time de Desenvolvimento e QA para implementação e validação de uma entrega específica.
 
@@ -38,11 +38,118 @@ A US deve conter apenas as informações necessárias para a implementação e t
 * Toda US deve possuir uma Feature associada.
 * Uma US só pode ser criada após a aprovação da Feature.
 * Alterações posteriores na Feature devem gerar novas Issues ou novas User Stories.
-* A US deve ser objetiva e possuir leitura rápida.
+* A US deve ser objetiva.
+* Objetividade não significa falta de detalhamento.
+* A US deve eliminar ambiguidades e reduzir interpretações.
 * A US não deve replicar integralmente a Feature.
 * A US deve conter apenas as regras necessárias para a implementação proposta.
 * Os critérios de aceite devem permitir que o QA valide a implementação sem depender de interpretação adicional.
 * Artefatos complementares devem ser referenciados por links.
+
+---
+
+# Qualidade das User Stories
+
+Uma User Story é considerada adequada quando Desenvolvimento, QA e Analista possuem o mesmo entendimento da funcionalidade.
+
+O objetivo não é minimizar a quantidade de texto, mas garantir clareza suficiente para implementação e validação.
+
+## Regras Gerais
+
+### RG01 - Não deixar espaço para interpretação
+
+Se uma regra permitir mais de uma interpretação válida, ela não está pronta para desenvolvimento.
+
+### RG02 - Evitar regras genéricas
+
+Evitar termos como:
+
+* validar corretamente;
+* tratar adequadamente;
+* verificar permissões;
+* exibir informações necessárias;
+* calcular conforme regra de negócio.
+
+Esses comportamentos devem ser descritos explicitamente.
+
+### RG03 - Descrever comportamentos esperados
+
+As regras devem explicar exatamente como o sistema deve se comportar.
+
+### RG04 - Utilizar exemplos em funcionalidades complexas
+
+Sempre que a funcionalidade envolver:
+
+* cálculos;
+* datas;
+* períodos;
+* aprovações;
+* priorizações;
+* ordenações;
+* integrações;
+* regras condicionais;
+* fluxos complexos;
+
+devem ser adicionados exemplos de negócio na User Story.
+
+### RG05 - Casos de exceção devem ser documentados
+
+Sempre que existir comportamento específico para erro, bloqueio ou situação excepcional, ele deve estar descrito.
+
+Exemplos:
+
+* usuário sem permissão;
+* registro inexistente;
+* período inválido;
+* integração indisponível;
+* dados obrigatórios ausentes.
+
+### RG06 - O desenvolvedor não deve precisar adivinhar
+
+Ao concluir a User Story, o analista deve responder:
+
+"Existe alguma decisão de negócio que ficará a cargo do desenvolvedor?"
+
+Se a resposta for sim, a User Story precisa ser refinada.
+
+---
+
+# Qualidade das Regras de Negócio
+
+As Regras de Negócio devem definir o comportamento esperado do sistema.
+
+## Boas práticas
+
+### Correto
+
+RN01 - Apenas usuários com perfil Administrador podem editar registros.
+
+RN02 - O campo CPF não pode ser alterado após a criação do cadastro.
+
+RN03 - Não deve ser permitido cadastrar um período que intercepte outro período existente para o mesmo colaborador.
+
+### Evitar
+
+RN01 - O sistema deve validar permissões.
+
+RN02 - O sistema deve tratar conflitos de período.
+
+RN03 - O sistema deve calcular corretamente o resultado.
+
+## Quando utilizar exemplos
+
+Sempre que a descrição da regra não for suficiente para eliminar ambiguidades.
+
+Exemplo:
+
+Período existente:
+01/01/2026 a 31/01/2026
+
+Novo período:
+15/01/2026 a 20/01/2026
+
+Resultado esperado:
+Cadastro não permitido.
 
 ---
 
@@ -122,7 +229,8 @@ Uma User Story é considerada pronta para desenvolvimento quando possuir:
 * Escopo definido;
 * Regras de Negócio definidas;
 * Critérios de Aceite definidos;
-* Artefatos necessários referenciados.
+* Artefatos necessários referenciados;
+* Casos complexos exemplificados quando aplicável.
 
 ---
 
@@ -133,12 +241,13 @@ Uma User Story é considerada pronta para desenvolvimento quando possuir:
 * Escrever a Feature;
 * Garantir aprovação do negócio;
 * Criar as User Stories derivadas;
-* Definir regras de negócio e critérios de aceite.
+* Definir regras de negócio e critérios de aceite;
+* Garantir que não existam ambiguidades na especificação.
 
 ## Desenvolvimento
 
 * Implementar conforme definido na US;
-* Reportar inconsistências ou lacunas identificadas.
+* Reportar inconsistências, ambiguidades ou lacunas identificadas.
 
 ## QA
 
