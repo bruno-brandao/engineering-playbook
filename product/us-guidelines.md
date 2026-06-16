@@ -1,5 +1,3 @@
-# US_GUIDELINES.md
-
 # Padrão de User Stories
 
 ## Objetivo
