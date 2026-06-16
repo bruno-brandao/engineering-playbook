@@ -25,7 +25,7 @@ Ela deve conter:
 * Protótipos;
 * Aprovação do negócio.
 
-## User Story (US)
+## [User Story](us-template.md) (US)
 
 A User Story é o artefato utilizado pelo time de Desenvolvimento e QA para implementação e validação de uma entrega específica.
 
