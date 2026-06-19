@@ -24,34 +24,31 @@ engineering-playbook
 │
 ├── README.md
 │
-├── product
-│   ├── feature-guidelines.md
-│   ├── us-guidelines.md
-│   └── us-template.md
-│
-├── development
-│   ├── coding-standards.md
-│   ├── architecture-guidelines.md
-│   ├── pull-request-guidelines.md
-│   └── branching-strategy.md
-│
-├── qa
-│   ├── testing-guidelines.md
-│   └── test-strategy.md
-│
-├── devops
-│   ├── release-process.md
-│   ├── deployment-process.md
-│   └── environments.md
-│
-├── ai
-│   ├── prompt-guidelines.md
-│   ├── ai-assisted-development.md
-│   └── agent-guidelines.md
-│
-└── adr
-    └── README.md
+├── product                 # Guidelines e templates de requisitos
+├── development             # Padrões de código e arquitetura
+├── qa                      # Estratégia e diretrizes de testes
+├── devops                  # Release, deploy e ambientes
+├── ai                      # Uso de IA no processo de engenharia
+├── adr                     # Architecture Decision Records
+├── playbooks               # Processos passo a passo para pessoas
+└── skills                  # Instruções operacionais para agentes de IA
+    ├── product
+    │   ├── requirements-analyst
+    │   └── requirements-reviewer
+    └── delivery
+        └── sprint-readiness-reviewer
 ```
+
+Ver fluxo completo em [playbooks/PIPELINE.md](playbooks/PIPELINE.md).
+
+## Tipos de artefato
+
+| Tipo | Diretório | Objetivo |
+| --- | --- | --- |
+| Guideline | `product/`, `development/`, `qa/`, … | Regras e padrões do time |
+| Template | `product/`, … | Estrutura de documento |
+| Skill | `skills/` | Instruções para IA executar uma tarefa |
+| Playbook | `playbooks/` | Processo passo a passo executado por pessoas |
 
 ---
 
@@ -63,7 +60,8 @@ Documentação relacionada à definição e decomposição de requisitos.
 
 | Documento             | Objetivo                                           |
 | --------------------- | -------------------------------------------------- |
-| feature-guidelines.md | Padrões para criação de Features                   |
+| [feature-guidelines.md](product/feature-guidelines.md) | Padrões para criação de Features                   |
+| [feature-template.md](product/feature-template.md) | Template oficial de Feature                     |
 | [us-guidelines.md](product/us-guidelines.md) | Regras para criação e decomposição de User Stories |
 | [us-template.md](product/us-template.md)        | Template oficial de User Story                     |
 
@@ -119,9 +117,37 @@ Documentação relacionada ao uso de Inteligência Artificial no processo de eng
 
 | Documento                  | Objetivo                             |
 | -------------------------- | ------------------------------------ |
+| [analyst-onboarding.md](ai/analyst-onboarding.md) | Guia para analistas usarem IA (Cursor, Claude, ChatGPT) sem Git |
+| [agent-guidelines.md](ai/agent-guidelines.md) | Diretrizes para agentes (inclui política read-only no DevOps) |
+| [azure-devops-integration.md](ai/azure-devops-integration.md) | Configuração MCP e uso com Features/US |
 | prompt-guidelines.md       | Padrões para construção de prompts   |
 | ai-assisted-development.md | Uso de IA no desenvolvimento         |
-| agent-guidelines.md        | Diretrizes para agentes e automações |
+
+---
+
+# Skills
+
+Instruções operacionais para agentes de IA, organizadas por domínio e portáveis entre IDEs (Cursor, Claude Code, Antigravity).
+
+| Recurso | Objetivo |
+| --- | --- |
+| [skills/README.md](skills/README.md) | Índice, estrutura e integração por IDE |
+| [requirements-analyst](skills/product/requirements-analyst/SKILL.md) | Transformar Features aprovadas em User Stories |
+| [requirements-reviewer](skills/product/requirements-reviewer/SKILL.md) | Revisar User Stories antes do backlog |
+| [sprint-readiness-reviewer](skills/delivery/sprint-readiness-reviewer/SKILL.md) | Validar USs antes do sprint planning |
+| [us-estimator](skills/delivery/us-estimator/SKILL.md) | Pré-estimar User Stories em horas |
+
+---
+
+# Playbooks
+
+Processos cerimoniais e fluxos de trabalho conduzidos por pessoas. Ver [playbooks/README.md](playbooks/README.md) e [fluxo completo](playbooks/PIPELINE.md).
+
+| Playbook | Objetivo |
+| --- | --- |
+| [product-discovery.md](playbooks/product-discovery.md) | Descoberta inicial do problema |
+| [feature-refinement.md](playbooks/feature-refinement.md) | Refinar e aprovar Feature antes das User Stories |
+| [sprint-planning.md](playbooks/sprint-planning.md) | Planejar sprint com USs prontas |
 
 ---
 
