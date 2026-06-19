@@ -1,0 +1,22 @@
+{
+  "mcpServers": {
+    "ado": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@azure-devops/mcp",
+        "aguiabranca",
+        "--authentication",
+        "azcli",
+        "-d",
+        "core",
+        "work",
+        "work-items"
+      ],
+      "env": {
+        "ado_mcp_project": "AtivosCompraMobilizacao",
+        "ado_mcp_team": "AtivosCompraMobilizacao Team"
+      }
+    }
+  }
+}
