@@ -98,6 +98,19 @@ Se usar PAT, restrinja o escopo a **Work Items: Read** (e **Project and Team: Re
 | --- | --- | --- |
 | Ler Feature e propor USs | [requirements-analyst](../skills/product/requirements-analyst/SKILL.md) | Nenhuma escrita |
 | Revisar USs do backlog | [requirements-reviewer](../skills/product/requirements-reviewer/SKILL.md) | Nenhuma escrita |
+| Scan de repos (DCP) | [project-scanner](../skills/development/project-scanner/SKILL.md) | Nenhuma escrita — `az repos list` ou REST read-only |
+
+### Dev Context Platform — listar repos
+
+O CLI `scan init --discover-ado` usa somente leitura:
+
+```bash
+az repos list --organization https://dev.azure.com/{org} --project {projeto} -o json
+```
+
+Ou REST: `GET https://dev.azure.com/{org}/{projeto}/_apis/git/repositories?api-version=7.1` com PAT **Code: Read**.
+
+Ver [project-context/README.md](../project-context/README.md).
 
 ### Exemplos de prompt
 

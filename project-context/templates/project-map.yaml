@@ -1,0 +1,25 @@
+# Template — project-map.yaml
+# Copie para project-context/projects/{projeto}/project-map.yaml
+
+project: SeuProjeto
+organization: sua-organizacao
+default_reference_branch: main
+default_indexing:
+  profile: standard  # minimal | standard | full
+updated_at: null
+
+repos:
+  - name: exemplo-api
+    status: active  # active | legacy | discontinued
+    reference_branch: main
+    local_path: ../exemplo-api
+    ado_url: https://dev.azure.com/sua-organizacao/SeuProjeto/_git/exemplo-api
+    stack: []
+    description: ""
+    owners: []
+
+  - name: exemplo-legacy
+    status: legacy
+    reference_branch: develop
+    local_path: ../exemplo-legacy
+    description: "Repo legado — sync automático desligado salvo --force"

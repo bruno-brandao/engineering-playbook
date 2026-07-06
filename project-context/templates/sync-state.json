@@ -1,0 +1,13 @@
+{
+  "reference_branch": "main",
+  "working_branch": null,
+  "indexed_commit_sha": "",
+  "indexed_commit_date": null,
+  "previous_commit_sha": null,
+  "sync_history": [],
+  "staleness": {
+    "is_stale": true,
+    "remote_head_sha": "",
+    "commits_behind": 0
+  }
+}

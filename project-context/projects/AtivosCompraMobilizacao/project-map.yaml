@@ -1,0 +1,197 @@
+project: AtivosCompraMobilizacao
+organization: aguiabranca
+default_reference_branch: develop
+default_indexing:
+  profile: standard
+updated_at: "2026-06-25T15:30:00Z"
+
+repos:
+  # --- Produto (active) ---
+  - name: service-mobilizacaofrota
+    status: active
+    reference_branch: develop
+    local_path: C:/Projetos/sima/service-mobilizacaofrota
+    ado_url: https://dev.azure.com/aguiabranca/AtivosCompraMobilizacao/_git/service-mobilizacaofrota
+    stack: []
+    description: Backend principal SIMA — mobilização de frota (ex. rotina Atualização Diária)
+    owners:
+      - squad-ativos
+
+  - name: front-mobilizacao-frota
+    status: active
+    reference_branch: develop
+    local_path: C:/Projetos/sima/front-mobilizacao-frota
+    ado_url: https://dev.azure.com/aguiabranca/AtivosCompraMobilizacao/_git/front-mobilizacao-frota
+    stack: []
+    description: Frontend SIMA — mobilização de frota
+    owners:
+      - squad-ativos
+
+  - name: service-identity
+    status: active
+    reference_branch: develop
+    local_path: null
+    ado_url: https://dev.azure.com/aguiabranca/AtivosCompraMobilizacao/_git/service-identity
+    stack: []
+    description: Serviço de identidade / autenticação
+    owners:
+      - squad-ativos
+
+  - name: service-auditoria
+    status: active
+    reference_branch: develop
+    local_path: null
+    ado_url: https://dev.azure.com/aguiabranca/AtivosCompraMobilizacao/_git/service-auditoria
+    stack: []
+    description: Serviço de auditoria
+    owners:
+      - squad-ativos
+
+  - name: service-mail
+    status: active
+    reference_branch: develop
+    local_path: null
+    ado_url: https://dev.azure.com/aguiabranca/AtivosCompraMobilizacao/_git/service-mail
+    stack: []
+    description: Serviço de e-mail
+    owners:
+      - squad-ativos
+
+  - name: service-importacao-orcamento
+    status: active
+    reference_branch: develop
+    local_path: null
+    ado_url: https://dev.azure.com/aguiabranca/AtivosCompraMobilizacao/_git/service-importacao-orcamento
+    stack: []
+    description: Importação de orçamento
+    owners:
+      - squad-ativos
+
+  - name: service-signalr
+    status: active
+    reference_branch: develop
+    local_path: null
+    ado_url: https://dev.azure.com/aguiabranca/AtivosCompraMobilizacao/_git/service-signalr
+    stack: []
+    description: SignalR / notificações em tempo real
+    owners:
+      - squad-ativos
+
+  - name: service-tco
+    status: active
+    reference_branch: develop
+    local_path: null
+    ado_url: https://dev.azure.com/aguiabranca/AtivosCompraMobilizacao/_git/service-tco
+    stack: []
+    description: Serviço TCO (Total Cost of Ownership)
+    owners:
+      - squad-ativos
+
+  # --- Time de infra (active, owner infra — fora do escopo de US de produto) ---
+  - name: infra-pipelines
+    status: active
+    reference_branch: main
+    local_path: null
+    ado_url: https://dev.azure.com/aguiabranca/AtivosCompraMobilizacao/_git/infra-pipelines
+    stack: []
+    description: Time de infra — pipelines compartilhados
+    owners:
+      - time-infra
+
+  - name: automated-sql-deploy-mobfrotas
+    status: active
+    reference_branch: main
+    local_path: null
+    ado_url: https://dev.azure.com/aguiabranca/AtivosCompraMobilizacao/_git/automated-sql-deploy-mobfrotas
+    stack: []
+    description: Time de infra — deploy SQL mobfrotas
+    owners:
+      - time-infra
+
+  - name: automated-sql-deploy-consolidado
+    status: active
+    reference_branch: main
+    local_path: null
+    ado_url: https://dev.azure.com/aguiabranca/AtivosCompraMobilizacao/_git/automated-sql-deploy-consolidado
+    stack: []
+    description: Time de infra — deploy SQL consolidado
+    owners:
+      - time-infra
+
+  - name: automated-sql-deploy-identity
+    status: active
+    reference_branch: main
+    local_path: null
+    ado_url: https://dev.azure.com/aguiabranca/AtivosCompraMobilizacao/_git/automated-sql-deploy-identity
+    stack: []
+    description: Time de infra — deploy SQL identity
+    owners:
+      - time-infra
+
+  - name: automated-sql-deploy-tco
+    status: active
+    reference_branch: main
+    local_path: null
+    ado_url: https://dev.azure.com/aguiabranca/AtivosCompraMobilizacao/_git/automated-sql-deploy-tco
+    stack: []
+    description: Time de infra — deploy SQL TCO
+    owners:
+      - time-infra
+
+  - name: restore-sql-base-consolidado
+    status: active
+    reference_branch: main
+    local_path: null
+    ado_url: https://dev.azure.com/aguiabranca/AtivosCompraMobilizacao/_git/restore-sql-base-consolidado
+    stack: []
+    description: Time de infra — restore SQL base consolidado
+    owners:
+      - time-infra
+
+  - name: restore-sql-base-mobfrotas
+    status: active
+    reference_branch: main
+    local_path: null
+    ado_url: https://dev.azure.com/aguiabranca/AtivosCompraMobilizacao/_git/restore-sql-base-mobfrotas
+    stack: []
+    description: Time de infra — restore SQL base mobfrotas
+    owners:
+      - time-infra
+
+  - name: restore-sql-base-tco
+    status: active
+    reference_branch: main
+    local_path: null
+    ado_url: https://dev.azure.com/aguiabranca/AtivosCompraMobilizacao/_git/restore-sql-base-tco
+    stack: []
+    description: Time de infra — restore SQL base TCO
+    owners:
+      - time-infra
+
+  # --- Descontinuados (sync automático desligado salvo --force) ---
+  - name: service-precificacao-frota
+    status: discontinued
+    reference_branch: main
+    local_path: null
+    ado_url: https://dev.azure.com/aguiabranca/AtivosCompraMobilizacao/_git/service-precificacao-frota
+    stack: []
+    description: Descontinuado
+    owners: []
+
+  - name: sima-cypress
+    status: discontinued
+    reference_branch: main
+    local_path: null
+    ado_url: https://dev.azure.com/aguiabranca/AtivosCompraMobilizacao/_git/sima-cypress
+    stack: []
+    description: Descontinuado — testes E2E Cypress
+    owners: []
+
+  - name: front-tco
+    status: discontinued
+    reference_branch: develop
+    local_path: null
+    ado_url: https://dev.azure.com/aguiabranca/AtivosCompraMobilizacao/_git/front-tco
+    stack: []
+    description: Descontinuado — frontend TCO
+    owners: []

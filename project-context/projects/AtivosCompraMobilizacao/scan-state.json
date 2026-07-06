@@ -1,0 +1,36 @@
+{
+  "updated_at": "2026-06-26T20:11:04.168956+00:00",
+  "repos": {
+    "sima-backend": {
+      "indexed_commit_sha": null,
+      "reference_branch": "main",
+      "staleness": {
+        "is_stale": true,
+        "remote_head_sha": "",
+        "commits_behind": 0
+      },
+      "last_sync": null,
+      "note": "Configure local_path e execute scan init quando clone disponível"
+    },
+    "service-mobilizacaofrota": {
+      "indexed_commit_sha": "aad142d9ba7229a76ba21c9a67c36a5907c1d1b1",
+      "reference_branch": "develop",
+      "staleness": {
+        "is_stale": false,
+        "remote_head_sha": "aad142d9ba7229a76ba21c9a67c36a5907c1d1b1",
+        "commits_behind": 0
+      },
+      "last_sync": "2026-06-26T19:53:48.093098+00:00"
+    },
+    "front-mobilizacao-frota": {
+      "indexed_commit_sha": "cc58014d8b229ccc3054d07043675999593c112c",
+      "reference_branch": "develop",
+      "staleness": {
+        "is_stale": false,
+        "remote_head_sha": "cc58014d8b229ccc3054d07043675999593c112c",
+        "commits_behind": 0
+      },
+      "last_sync": "2026-06-26T20:11:04.197431+00:00"
+    }
+  }
+}

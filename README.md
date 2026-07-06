@@ -31,15 +31,16 @@ engineering-playbook
 ├── ai                      # Uso de IA no processo de engenharia
 ├── adr                     # Architecture Decision Records
 ├── playbooks               # Processos passo a passo para pessoas
+├── project-context         # Dev Context Platform (DCP) — scan, KB, mapas
 └── skills                  # Instruções operacionais para agentes de IA
     ├── product
-    │   ├── requirements-analyst
-    │   └── requirements-reviewer
-    └── delivery
-        └── sprint-readiness-reviewer
+    ├── delivery
+    └── development
+        ├── project-scanner
+        └── us-implementation-planner
 ```
 
-Ver fluxo completo em [playbooks/PIPELINE.md](playbooks/PIPELINE.md).
+Ver fluxo completo em [playbooks/PIPELINE.md](playbooks/PIPELINE.md). DCP: [project-context/README.md](project-context/README.md).
 
 ## Tipos de artefato
 
@@ -136,6 +137,8 @@ Instruções operacionais para agentes de IA, organizadas por domínio e portáv
 | [requirements-reviewer](skills/product/requirements-reviewer/SKILL.md) | Revisar User Stories antes do backlog |
 | [sprint-readiness-reviewer](skills/delivery/sprint-readiness-reviewer/SKILL.md) | Validar USs antes do sprint planning |
 | [us-estimator](skills/delivery/us-estimator/SKILL.md) | Pré-estimar User Stories em horas |
+| [project-scanner](skills/development/project-scanner/SKILL.md) | Scan de repos e KB (Dev Context Platform) |
+| [us-implementation-planner](skills/development/us-implementation-planner/SKILL.md) | Plano de implementação de US para desenvolvedores |
 
 ---
 

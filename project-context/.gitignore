@@ -1,0 +1,15 @@
+# Build outputs
+**/bin/
+**/obj/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.python-path
+
+# Roslyn indexer temp
+**/.roslyn-output.json
+
+# Obsidian vault local (symlinks por máquina)
+projects/*/vault/

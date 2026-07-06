@@ -36,9 +36,12 @@ skills
 │   └── adr-writer                  planejada
 │
 ├── development
-│   ├── pr-reviewer                 planejada
-│   ├── code-reviewer               planejada
-│   └── refactoring-advisor         planejada
+│   ├── project-scanner           ✅ disponível
+│   ├── dcp-bootstrap             ✅ disponível
+│   ├── us-implementation-planner ✅ disponível
+│   ├── pr-reviewer               planejada
+│   ├── code-reviewer             planejada
+│   └── refactoring-advisor       planejada
 │
 └── delivery
     ├── tech-lead-reviewer          ✅ disponível
@@ -71,6 +74,15 @@ skills/<domínio>/<nome-da-skill>/
 | delivery | [tech-lead-reviewer](delivery/tech-lead-reviewer/SKILL.md) | Revisão técnica de US e regras de negócio |
 | delivery | [sprint-readiness-reviewer](delivery/sprint-readiness-reviewer/SKILL.md) | Valida prontidão para sprint; relatório consolidado por sprint ou lista de USs |
 | delivery | [us-estimator](delivery/us-estimator/SKILL.md) | Pré-estimativa de US em horas |
+| development | [project-scanner](development/project-scanner/SKILL.md) | Scan de repos, KB e sync-state (DCP) |
+| development | [dcp-bootstrap](development/dcp-bootstrap/SKILL.md) | Instalar deps e executar CLI scan |
+| development | [us-implementation-planner](development/us-implementation-planner/SKILL.md) | Plano de implementação da US com verify de branch |
+
+---
+
+## Dev Context Platform
+
+Infraestrutura em [project-context/](../project-context/README.md). Skills `project-scanner` e `us-implementation-planner` operam a DCP após sprint planning.
 
 ---
 

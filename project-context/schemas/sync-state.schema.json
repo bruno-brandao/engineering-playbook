@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://engineering-playbook/schemas/sync-state.schema.json",
+  "title": "SyncState",
+  "description": "Estado de sincronização da documentação (.engineering/) com a branch de referência.",
+  "type": "object",
+  "required": ["reference_branch", "indexed_commit_sha", "staleness"],
+  "properties": {
+    "reference_branch": {
+      "type": "string"
+    },
+    "working_branch": {
+      "type": "string",
+      "description": "Branch usada no último sync quando diferente da reference_branch"
+    },
+    "indexed_commit_sha": {
+      "type": "string",
+      "minLength": 7,
+      "description": "SHA do commit totalmente indexado"
+    },
+    "indexed_commit_date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "previous_commit_sha": {
+      "type": "string"
+    },
+    "sync_history": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/syncEvent"
+      }
+    },
+    "staleness": {
+      "$ref": "#/$defs/staleness"
+    }
+  },
+  "$defs": {
+    "syncEvent": {
+      "type": "object",
+      "required": ["at", "from_sha", "to_sha", "trigger"],
+      "properties": {
+        "at": { "type": "string", "format": "date-time" },
+        "from_sha": { "type": "string" },
+        "to_sha": { "type": "string" },
+        "commits_count": { "type": "integer", "minimum": 0 },
+        "files_changed": { "type": "integer", "minimum": 0 },
+        "nodes_updated": { "type": "integer", "minimum": 0 },
+        "nodes_removed": { "type": "integer", "minimum": 0 },
+        "trigger": {
+          "type": "string",
+          "enum": ["manual", "ci", "scheduled"]
+        }
+      }
+    },
+    "staleness": {
+      "type": "object",
+      "required": ["is_stale", "remote_head_sha", "commits_behind"],
+      "properties": {
+        "is_stale": { "type": "boolean" },
+        "remote_head_sha": { "type": "string" },
+        "commits_behind": { "type": "integer", "minimum": 0 }
+      }
+    }
+  }
+}

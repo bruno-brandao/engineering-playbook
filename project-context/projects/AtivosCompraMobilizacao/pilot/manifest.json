@@ -1,0 +1,51 @@
+{
+  "version": "1",
+  "generated_at": "2026-06-25T12:00:00Z",
+  "reference_branch": "main",
+  "source_commit": "pilot-seed",
+  "nodes": [
+    {
+      "id": "SIMA_AtualizacaoDiariaJob",
+      "path": "pilot/kb-nodes/SIMA_AtualizacaoDiariaJob.md",
+      "tags": ["job", "batch", "sap", "sima-backend"],
+      "keywords": [
+        "Atualização Diária",
+        "DataDesativacao",
+        "VWImobilizadosSapGeralSIMA",
+        "CodigoSapVix",
+        "StatusFaturamento",
+        "Veículo Faturado",
+        "estoque venda",
+        "SAP"
+      ],
+      "wikilinks": ["SIMA_IAtivoRepository", "DW_VWImobilizadosSapGeralSIMA"],
+      "tipo": "job",
+      "source_file": "Jobs/AtualizacaoDiariaJob.cs",
+      "source_commit": "pilot-seed",
+      "reference_branch": "main"
+    },
+    {
+      "id": "SIMA_IAtivoRepository",
+      "path": null,
+      "tags": ["repository", "persistence", "sima-backend"],
+      "keywords": ["Ativo", "Placa", "CodigoSapVix", "DataDesativacao"],
+      "wikilinks": ["SIMA_Ativo"],
+      "tipo": "repository",
+      "source_file": "Infrastructure/Repositories/AtivoRepository.cs",
+      "source_commit": "pilot-seed",
+      "reference_branch": "main"
+    },
+    {
+      "id": "DW_VWImobilizadosSapGeralSIMA",
+      "path": null,
+      "tags": ["external", "dw", "sap"],
+      "keywords": ["VWImobilizadosSapGeralSIMA", "StatusFaturamento", "CodigoSapVix"],
+      "wikilinks": [],
+      "tipo": "external-view",
+      "source_file": null,
+      "source_commit": "pilot-seed",
+      "reference_branch": "main"
+    }
+  ],
+  "broken_wikilinks": ["SIMA_Ativo"]
+}

@@ -1,0 +1,17 @@
+# Template — .engineering/repo-profile.yaml
+# Gerado automaticamente pelo scan; valores abaixo são placeholders.
+
+name: repo-name
+stack:
+  - dotnet
+quality_score: 0
+debt_level: low  # low | medium | high
+patterns:
+  dominant: ""
+  recommended: ""
+folder_structure: {}
+integration_hints: []
+indexer_available: false
+last_scan_at: null
+source_commit: null
+reference_branch: main

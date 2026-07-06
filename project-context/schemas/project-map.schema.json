@@ -1,0 +1,115 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://engineering-playbook/schemas/project-map.schema.json",
+  "title": "ProjectMap",
+  "description": "Mapa central de um produto Azure DevOps — repos, status e branches de referência.",
+  "type": "object",
+  "required": ["project", "organization", "repos"],
+  "properties": {
+    "project": {
+      "type": "string",
+      "description": "Nome do projeto no Azure DevOps"
+    },
+    "organization": {
+      "type": "string",
+      "description": "Organização Azure DevOps (ex.: aguiabranca)"
+    },
+    "default_reference_branch": {
+      "type": "string",
+      "default": "main",
+      "description": "Branch de referência padrão quando não especificada por repo"
+    },
+    "default_indexing": {
+      "type": "object",
+      "description": "Perfil de indexação KB padrão para todos os repos do projeto",
+      "properties": {
+        "profile": {
+          "type": "string",
+          "enum": ["minimal", "standard", "full"],
+          "default": "standard"
+        },
+        "include": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Override explícito de categorias (substitui profile)"
+        },
+        "exclude_globs": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Glob patterns adicionais de exclusão"
+        }
+      }
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "repos": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/repo"
+      },
+      "minItems": 1
+    }
+  },
+  "$defs": {
+    "repo": {
+      "type": "object",
+      "required": ["name", "status"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Nome do repositório no Azure DevOps"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["active", "legacy", "discontinued"],
+          "description": "active = em uso; legacy = mantido mas evitar novas features; discontinued = descontinuado"
+        },
+        "reference_branch": {
+          "type": "string",
+          "default": "main"
+        },
+        "local_path": {
+          "type": "string",
+          "description": "Caminho local relativo ao workspace (opcional)"
+        },
+        "ado_url": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL do repositório no Azure DevOps"
+        },
+        "stack": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Stacks detectadas (ex.: dotnet, node, azure-functions)"
+        },
+        "description": {
+          "type": "string"
+        },
+        "owners": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "indexing": {
+          "type": "object",
+          "description": "Override de indexação KB por repo",
+          "properties": {
+            "profile": {
+              "type": "string",
+              "enum": ["minimal", "standard", "full"]
+            },
+            "include": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "exclude_globs": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

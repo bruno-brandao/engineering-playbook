@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://engineering-playbook/schemas/manifest.schema.json",
+  "title": "KBManifest",
+  "description": "Índice invertido da base de conhecimento (.engineering/kb/manifest.json).",
+  "type": "object",
+  "required": ["version", "nodes"],
+  "properties": {
+    "version": {
+      "type": "string",
+      "const": "1"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "reference_branch": { "type": "string" },
+    "source_commit": { "type": "string" },
+    "indexing_profile": {
+      "type": "string",
+      "enum": ["minimal", "standard", "full"]
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/node"
+      }
+    },
+    "broken_wikilinks": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "$defs": {
+    "node": {
+      "type": "object",
+      "required": ["id", "path", "tags"],
+      "properties": {
+        "id": { "type": "string" },
+        "path": { "type": "string" },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "keywords": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "wikilinks": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "tipo": { "type": "string" },
+        "source_file": { "type": "string" },
+        "source_commit": { "type": "string" },
+        "reference_branch": { "type": "string" }
+      }
+    }
+  }
+}

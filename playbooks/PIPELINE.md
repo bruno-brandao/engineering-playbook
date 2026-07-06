@@ -44,6 +44,15 @@ Visão end-to-end do pipeline documentado neste repositório — da descoberta a
 │ sprint-planning     │  Playbook — comprometer sprint
 └──────────┬──────────┘
            ▼
+┌─────────────────────┐
+│ project-scanner     │  DCP — scan repos, KB, sync-state
+└──────────┬──────────┘     project-context/scripts/scan.py
+           ▼
+┌─────────────────────┐
+│ us-implementation   │  DCP — plano de execução da US
+│ planner             │     (branch verify + KB L0–L3)
+└──────────┬──────────┘
+           ▼
      Desenvolvimento + QA
 ```
 
@@ -63,6 +72,23 @@ Visão end-to-end do pipeline documentado neste repositório — da descoberta a
 | Prontidão sprint | Skill | [sprint-readiness-reviewer](../skills/delivery/sprint-readiness-reviewer/SKILL.md) |
 | Pré-estimativa | Skill | [us-estimator](../skills/delivery/us-estimator/SKILL.md) |
 | Planejamento | Playbook | [sprint-planning.md](sprint-planning.md) |
+| Scan de repos / KB | CLI + Skill | [project-context](../project-context/README.md), [project-scanner](../skills/development/project-scanner/SKILL.md) |
+| Plano de implementação | Skill | [us-implementation-planner](../skills/development/us-implementation-planner/SKILL.md) |
+
+---
+
+## Dev Context Platform (DCP)
+
+Camada entre sprint planning e desenvolvimento. Documentação em [project-context/README.md](../project-context/README.md).
+
+| Componente | Função |
+| --- | --- |
+| `scan init/sync/status/verify` | Scan determinístico, sync por branch de referência |
+| `.engineering/` por repo | repo-profile, KB, sync-state |
+| `project-map.yaml` | Mapa de repos (active / legacy / discontinued) |
+| `integration-graph.md` | Dependências cross-repo |
+
+**Piloto:** [AtivosCompraMobilizacao / US-147722](../project-context/projects/AtivosCompraMobilizacao/pilot/README.md)
 
 ---
 

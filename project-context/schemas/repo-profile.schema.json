@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://engineering-playbook/schemas/repo-profile.schema.json",
+  "title": "RepoProfile",
+  "description": "Perfil arquitetural de um repositório gerado pelo scan leve.",
+  "type": "object",
+  "required": ["name", "stack", "quality_score", "patterns"],
+  "properties": {
+    "name": { "type": "string" },
+    "stack": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "quality_score": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "debt_level": {
+      "type": "string",
+      "enum": ["low", "medium", "high"]
+    },
+    "patterns": {
+      "type": "object",
+      "properties": {
+        "dominant": { "type": "string" },
+        "recommended": { "type": "string" }
+      }
+    },
+    "folder_structure": {
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    },
+    "integration_hints": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "indexer_available": {
+      "type": "boolean",
+      "description": "Se existe plugin de indexer profundo para a stack principal"
+    },
+    "last_scan_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source_commit": {
+      "type": "string"
+    },
+    "reference_branch": {
+      "type": "string"
+    }
+  }
+}
