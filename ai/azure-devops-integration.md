@@ -99,6 +99,7 @@ Se usar PAT, restrinja o escopo a **Work Items: Read** (e **Project and Team: Re
 | Ler Feature e propor USs | [requirements-analyst](../skills/product/requirements-analyst/SKILL.md) | Nenhuma escrita |
 | Revisar USs do backlog | [requirements-reviewer](../skills/product/requirements-reviewer/SKILL.md) | Nenhuma escrita |
 | Scan de repos (DCP) | [project-scanner](../skills/development/project-scanner/SKILL.md) | Nenhuma escrita — `az repos list` ou REST read-only |
+| Registrar horas (Time Log) | [time-log-registrar](../skills/delivery/time-log-registrar/SKILL.md) | **Escrita** em `TimeLogData` via PAT dedicado — ver skill |
 
 ### Dev Context Platform — listar repos
 
@@ -159,6 +160,17 @@ Observações do processo atual (ajustar se necessário):
 * Parent com ícone de troféu costuma ser Feature ou Epic — usar como referência de rastreabilidade na análise.
 
 Se o time usar tipos ou campos customizados adicionais, documente o mapeamento neste arquivo via Pull Request.
+
+---
+
+## Exceção — Time Log (escrita)
+
+A skill [time-log-registrar](../skills/delivery/time-log-registrar/SKILL.md) é a **única** com permissão de escrita no Azure DevOps. Escopo limitado:
+
+* Criar/editar documentos na coleção `TimeLogData` da extensão TechsBCN DevOps-TimeLog
+* Via REST Extension Management + PAT `ADO_TIMELOG_PAT` (não via MCP read-only)
+
+Não altera work items, comentários, estados ou capacity. Demais skills permanecem somente leitura.
 
 ---
 

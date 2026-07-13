@@ -1,0 +1,31 @@
+{
+  "organization": "aguiabranca",
+  "date": "2026-07-10",
+  "entries": [
+    {
+      "workItemId": 150334,
+      "activity": "Coding / Implementação",
+      "hours": 5,
+      "minutes": 0,
+      "startTime": "09:00",
+      "notes": "Implementação principal"
+    },
+    {
+      "workItemId": 150334,
+      "activity": "Code Review / Pull Requests",
+      "hours": 1,
+      "minutes": 0,
+      "startTime": "09:00",
+      "notes": ""
+    },
+    {
+      "workItemId": 150334,
+      "activity": "Daily Scrum / Reunião Diária",
+      "hours": 1,
+      "minutes": 0,
+      "startTime": "09:00",
+      "notes": ""
+    }
+  ]
+}
+

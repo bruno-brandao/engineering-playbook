@@ -47,6 +47,7 @@ skills
     ├── tech-lead-reviewer          ✅ disponível
     ├── sprint-readiness-reviewer   ✅ disponível
     ├── us-estimator                ✅ disponível
+    ├── time-log-registrar          ✅ disponível
     └── release-reviewer            planejada
 ```
 
@@ -74,6 +75,7 @@ skills/<domínio>/<nome-da-skill>/
 | delivery | [tech-lead-reviewer](delivery/tech-lead-reviewer/SKILL.md) | Revisão técnica de US e regras de negócio |
 | delivery | [sprint-readiness-reviewer](delivery/sprint-readiness-reviewer/SKILL.md) | Valida prontidão para sprint; relatório consolidado por sprint ou lista de USs |
 | delivery | [us-estimator](delivery/us-estimator/SKILL.md) | Pré-estimativa de US em horas |
+| delivery | [time-log-registrar](delivery/time-log-registrar/SKILL.md) | Registrar horas na extensão TechsBCN Time Log (escrita no ADO) |
 | development | [project-scanner](development/project-scanner/SKILL.md) | Scan de repos, KB e sync-state (DCP) |
 | development | [dcp-bootstrap](development/dcp-bootstrap/SKILL.md) | Instalar deps e executar CLI scan |
 | development | [us-implementation-planner](development/us-implementation-planner/SKILL.md) | Plano de implementação da US com verify de branch |
@@ -140,9 +142,10 @@ ln -s ../../caminho/para/engineering-playbook/skills/product/requirements-analys
 2. Vincule a skill no caminho da IDE.
 3. Garanta que o agente consiga ler os documentos referenciados em `product/`, `development/`, etc.
 
-### Azure DevOps (somente leitura)
+### Azure DevOps
 
-Para ler Features e User Stories do Azure DevOps, configure o MCP conforme [ai/azure-devops-integration.md](../ai/azure-devops-integration.md). O agente **não deve escrever** no DevOps — apenas sugerir alterações ao usuário. Ver [ai/agent-guidelines.md](../ai/agent-guidelines.md).
+* **Somente leitura** (padrão): configure o MCP conforme [ai/azure-devops-integration.md](../ai/azure-devops-integration.md). O agente **não deve escrever** no DevOps — apenas sugerir alterações ao usuário. Ver [ai/agent-guidelines.md](../ai/agent-guidelines.md).
+* **Time Log (exceção):** a skill [time-log-registrar](delivery/time-log-registrar/SKILL.md) grava horas na extensão TechsBCN via PAT dedicado (`ADO_TIMELOG_PAT`), com confirmação obrigatória antes de executar.
 
 **Analistas (sem Git):** ver [ai/analyst-onboarding.md](../ai/analyst-onboarding.md).
 

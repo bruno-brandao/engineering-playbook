@@ -41,6 +41,10 @@ Mesmo que ferramentas de escrita estejam disponíveis no servidor MCP, **não in
 
 Ver [azure-devops-integration.md](azure-devops-integration.md) para configuração do MCP em modo somente leitura.
 
+### Exceção — time-log-registrar
+
+A skill [time-log-registrar](../skills/delivery/time-log-registrar/SKILL.md) pode **gravar time logs** na extensão TechsBCN via API REST (PAT dedicado). Escopo restrito a documentos `TimeLogData` — nunca work items. Exige preview e confirmação explícita do usuário antes de gravar.
+
 ---
 
 ## Skills e playbooks
