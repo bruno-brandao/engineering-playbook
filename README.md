@@ -33,11 +33,10 @@ engineering-playbook
 ├── playbooks               # Processos passo a passo para pessoas
 ├── project-context         # Dev Context Platform (DCP) — scan, KB, mapas
 └── skills                  # Instruções operacionais para agentes de IA
-    ├── product
-    ├── delivery
-    └── development
-        ├── project-scanner
-        └── us-implementation-planner
+    ├── product             # Requisitos e refinamento
+    ├── delivery            # Readiness, estimativa e release
+    ├── development         # Contexto, implementação e revisão
+    └── qa                  # Estratégia e desenho de testes
 ```
 
 Ver fluxo completo em [playbooks/PIPELINE.md](playbooks/PIPELINE.md). DCP: [project-context/README.md](project-context/README.md).
@@ -135,10 +134,22 @@ Instruções operacionais para agentes de IA, organizadas por domínio e portáv
 | [skills/README.md](skills/README.md) | Índice, estrutura e integração por IDE |
 | [requirements-analyst](skills/product/requirements-analyst/SKILL.md) | Transformar Features aprovadas em User Stories |
 | [requirements-reviewer](skills/product/requirements-reviewer/SKILL.md) | Revisar User Stories antes do backlog |
+| [tech-lead-reviewer](skills/delivery/tech-lead-reviewer/SKILL.md) | Revisar viabilidade e impacto técnico das USs |
 | [sprint-readiness-reviewer](skills/delivery/sprint-readiness-reviewer/SKILL.md) | Validar USs antes do sprint planning |
 | [us-estimator](skills/delivery/us-estimator/SKILL.md) | Pré-estimar User Stories em horas |
 | [project-scanner](skills/development/project-scanner/SKILL.md) | Scan de repos e KB (Dev Context Platform) |
 | [us-implementation-planner](skills/development/us-implementation-planner/SKILL.md) | Plano de implementação de US para desenvolvedores |
+| [project-quality-bootstrap](skills/development/project-quality-bootstrap/SKILL.md) | Diagnosticar e propor skills locais de qualidade |
+| [qa-test-designer](skills/qa/qa-test-designer/SKILL.md) | Criar estratégia e cenários de teste rastreáveis |
+| [pre-pr-reviewer](skills/development/pre-pr-reviewer/SKILL.md) | Consolidar evidências e prontidão antes do PR |
+| [code-reviewer](skills/development/code-reviewer/SKILL.md) | Revisar diff/PR em modo somente leitura |
+| [release-reviewer](skills/delivery/release-reviewer/SKILL.md) | Avaliar prontidão técnica e operacional da release |
+
+## Skills globais e locais
+
+O plugin fornece processo, critérios e formatos comuns. Conhecimento executável específico de cada projeto — comandos, frameworks, paths e pré-requisitos — deve ficar em `.agents/skills/` no repositório consumidor.
+
+No primeiro uso, `project-quality-bootstrap` diagnostica o projeto, apresenta preview e pede confirmação antes de criar `local-verification` ou `test-generation`. Nenhum arquivo existente é sobrescrito automaticamente.
 
 ---
 

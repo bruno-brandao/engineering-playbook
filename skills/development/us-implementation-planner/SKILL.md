@@ -114,7 +114,10 @@ Usar [examples/implementation-plan.md](examples/implementation-plan.md).
 
 ### Etapa 7 — Handoff
 
-Plano pronto para execução. Sugerir `scan sync --branch` após implementação se KB ficou stale.
+* Encaminhar o plano ao desenvolvimento e ao [qa-test-designer](../../qa/qa-test-designer/SKILL.md) para desenho rastreável dos testes.
+* Se faltarem verificações locais confiáveis, recomendar [project-quality-bootstrap](../project-quality-bootstrap/SKILL.md).
+* Após implementação e testes, executar [pre-pr-reviewer](../pre-pr-reviewer/SKILL.md).
+* Sugerir `scan sync --branch` após implementação se a KB ficou stale.
 
 ---
 

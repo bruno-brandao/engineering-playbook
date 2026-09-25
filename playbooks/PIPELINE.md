@@ -53,7 +53,25 @@ Visão end-to-end do pipeline documentado neste repositório — da descoberta a
 │ planner             │     (branch verify + KB L0–L3)
 └──────────┬──────────┘
            ▼
-     Desenvolvimento + QA
+┌─────────────────────┐
+│ qa-test-designer    │  Skill — estratégia e cenários rastreáveis
+└──────────┬──────────┘
+           ▼
+┌─────────────────────┐
+│ Desenvolvimento     │  Skills locais — verificação e testes
+└──────────┬──────────┘
+           ▼
+┌─────────────────────┐
+│ pre-pr-reviewer     │  Skill — gate e evidências antes do PR
+└──────────┬──────────┘
+           ▼
+┌─────────────────────┐
+│ code-reviewer       │  Skill + Devin Review + revisão humana
+└──────────┬──────────┘
+           ▼
+┌─────────────────────┐
+│ release-reviewer    │  Skill — prontidão e Go/No-Go humano
+└─────────────────────┘
 ```
 
 ---
@@ -74,6 +92,11 @@ Visão end-to-end do pipeline documentado neste repositório — da descoberta a
 | Planejamento | Playbook | [sprint-planning.md](sprint-planning.md) |
 | Scan de repos / KB | CLI + Skill | [project-context](../project-context/README.md), [project-scanner](../skills/development/project-scanner/SKILL.md) |
 | Plano de implementação | Skill | [us-implementation-planner](../skills/development/us-implementation-planner/SKILL.md) |
+| Bootstrap de qualidade | Skill | [project-quality-bootstrap](../skills/development/project-quality-bootstrap/SKILL.md) |
+| Plano de testes | Skill | [qa-test-designer](../skills/qa/qa-test-designer/SKILL.md) |
+| Gate pré-PR | Skill | [pre-pr-reviewer](../skills/development/pre-pr-reviewer/SKILL.md) |
+| Revisão de código | Skill + plataforma | [code-reviewer](../skills/development/code-reviewer/SKILL.md) + Devin Review |
+| Prontidão de release | Skill | [release-reviewer](../skills/delivery/release-reviewer/SKILL.md) |
 
 ---
 
@@ -111,6 +134,8 @@ Integração somente leitura: [azure-devops-integration.md](../ai/azure-devops-i
 
 | Item | Domínio |
 | --- | --- |
-| qa-test-designer | QA — gerar casos de teste a partir de USs |
+| visual-regression (template local) | QA — evidências visuais específicas do projeto |
+| migration-checklist (template local) | Development — segurança de migrations por stack |
 | refinement-facilitator | Product — conduzir refinamento com IA |
-| release-process (playbook) | Delivery — complementar devops |
+| test-reviewer | QA — revisar implementação e cobertura dos testes |
+| release-process (playbook) | Delivery — complementar o release-reviewer |

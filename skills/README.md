@@ -28,7 +28,7 @@ skills
 │   └── refinement-facilitator    planejada
 │
 ├── qa
-│   ├── qa-test-designer            planejada
+│   ├── qa-test-designer          ✅ disponível
 │   └── test-reviewer               planejada
 │
 ├── architecture
@@ -39,16 +39,17 @@ skills
 │   ├── project-scanner           ✅ disponível
 │   ├── dcp-bootstrap             ✅ disponível
 │   ├── us-implementation-planner ✅ disponível
-│   ├── pr-reviewer               planejada
-│   ├── code-reviewer             planejada
-│   └── refactoring-advisor       planejada
+│   ├── project-quality-bootstrap ✅ disponível
+│   ├── pre-pr-reviewer           ✅ disponível
+│   ├── code-reviewer             ✅ disponível
+│   └── refactoring-advisor         planejada
 │
 └── delivery
     ├── tech-lead-reviewer          ✅ disponível
     ├── sprint-readiness-reviewer   ✅ disponível
     ├── us-estimator                ✅ disponível
     ├── time-log-registrar          ✅ disponível
-    └── release-reviewer            planejada
+    └── release-reviewer            ✅ disponível
 ```
 
 ---
@@ -76,9 +77,14 @@ skills/<domínio>/<nome-da-skill>/
 | delivery | [sprint-readiness-reviewer](delivery/sprint-readiness-reviewer/SKILL.md) | Valida prontidão para sprint; relatório consolidado por sprint ou lista de USs |
 | delivery | [us-estimator](delivery/us-estimator/SKILL.md) | Pré-estimativa de US em horas |
 | delivery | [time-log-registrar](delivery/time-log-registrar/SKILL.md) | Registrar horas na extensão TechsBCN Time Log (escrita no ADO) |
+| delivery | [release-reviewer](delivery/release-reviewer/SKILL.md) | Avaliar prontidão técnica e operacional da release |
 | development | [project-scanner](development/project-scanner/SKILL.md) | Scan de repos, KB e sync-state (DCP) |
 | development | [dcp-bootstrap](development/dcp-bootstrap/SKILL.md) | Instalar deps e executar CLI scan |
 | development | [us-implementation-planner](development/us-implementation-planner/SKILL.md) | Plano de implementação da US com verify de branch |
+| development | [project-quality-bootstrap](development/project-quality-bootstrap/SKILL.md) | Diagnosticar e propor skills locais de qualidade |
+| development | [pre-pr-reviewer](development/pre-pr-reviewer/SKILL.md) | Consolidar evidências e prontidão antes do PR |
+| development | [code-reviewer](development/code-reviewer/SKILL.md) | Revisar código em modo somente leitura |
+| qa | [qa-test-designer](qa/qa-test-designer/SKILL.md) | Criar estratégia e cenários de teste rastreáveis |
 
 ---
 
@@ -138,9 +144,20 @@ ln -s ../../caminho/para/engineering-playbook/skills/product/requirements-analys
 
 ## Uso em projetos de produto
 
-1. Mantenha o Engineering Playbook acessível (clone, submodule ou workspace multi-root).
-2. Vincule a skill no caminho da IDE.
-3. Garanta que o agente consiga ler os documentos referenciados em `product/`, `development/`, etc.
+1. Mantenha o Engineering Playbook acessível (plugin, clone, submodule ou workspace multi-root).
+2. Disponibilize as skills globais pelo mecanismo da ferramenta.
+3. Execute `project-quality-bootstrap` no primeiro uso para diagnosticar o projeto.
+4. Revise a proposta e confirme individualmente as skills locais a criar.
+5. Versione conhecimento executável do projeto em `.agents/skills/`.
+
+### Modelo global + local
+
+| Camada | Responsabilidade | Localização |
+| --- | --- | --- |
+| Global | Processo, governança, critérios e formato das saídas | Este playbook/plugin |
+| Local | Comandos, frameworks, paths, mocks e pré-requisitos comprovados | `.agents/skills/` do projeto consumidor |
+
+O bootstrap inicial oferece templates para `local-verification` e `test-generation`. Ele nunca sobrescreve skills existentes e bloqueia a criação enquanto houver placeholders ou comandos sem evidência.
 
 ### Azure DevOps
 

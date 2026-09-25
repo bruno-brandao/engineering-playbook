@@ -1,10 +1,11 @@
 {
   "name": "aguiabranca-playbook",
-  "version": "1.0.0",
-  "description": "Engineering Playbook Aguiabranca — skills de discovery, delivery e development para agentes de IA",
+  "version": "1.1.0",
+  "description": "Engineering Playbook Aguiabranca — skills de product, delivery, development e QA para agentes de IA",
   "skills": [
     "skills/delivery",
     "skills/development",
-    "skills/product"
+    "skills/product",
+    "skills/qa"
   ]
 }

@@ -2,11 +2,11 @@
 
 | Documento | Caminho |
 | --- | --- |
-| Project context | [project-context/README.md](../../../project-context/README.md) |
+| Project context | [project-context/README.md](../../../../project-context/README.md) |
 | Camadas L0–L5 | Ver seção *Princípio central* no plano DCP / project-context README |
-| Tech lead reviewer | [skills/delivery/tech-lead-reviewer/SKILL.md](../../delivery/tech-lead-reviewer/SKILL.md) |
-| Project scanner | [skills/development/project-scanner/SKILL.md](../project-scanner/SKILL.md) |
-| US guidelines | [product/us-guidelines.md](../../../product/us-guidelines.md) |
+| Tech lead reviewer | [skills/delivery/tech-lead-reviewer/SKILL.md](../../../delivery/tech-lead-reviewer/SKILL.md) |
+| Project scanner | [skills/development/project-scanner/SKILL.md](../../project-scanner/SKILL.md) |
+| US guidelines | [product/us-guidelines.md](../../../../product/us-guidelines.md) |
 
 ## Camadas de contexto
 
