@@ -45,7 +45,7 @@ Permitir que um administrador publique um workspace por projeto do Azure DevOps,
 * Lista dos projetos que o token do administrador lê no Azure DevOps.
 * Habilitação do projeto, confirmação do mapa do processo, marcação de area paths, publicação do mapa do projeto e nomeação do responsável.
 * Status `em configuração` e `disponível`.
-* Importação inicial a partir de um `project-map.yaml`, sem gravar `local_path`.
+* Importação inicial por upload de `project-map.yaml` na tela, com exportação de modelo e instrução de cada campo. `local_path` não é gravado.
 * Declaração explícita de que a conversa ainda não consulta código.
 * Dependência explícita de repositório de outro workspace, com justificativa.
 
@@ -62,13 +62,13 @@ Permitir que um administrador publique um workspace por projeto do Azure DevOps,
 
 # Quem pode fazer
 
-Membro do grupo de administradores no Entra ID.
+Pessoa com a permissão de administrador gravada no portal.
 
-O nome desse grupo ainda não está definido. Ver Observações.
+O Entra ID só autentica. A permissão de administrador, editor, aprovador e leitor fica no controle do próprio portal, no Supabase. Não há grupo do Entra ID para essas permissões.
 
-A lista de projetos usa o access token dessa pessoa no Azure DevOps, somente leitura (`vso.work`, `vso.project`, `vso.profile`). O portal não usa PAT compartilhado.
+A lista de projetos usa o access token dessa pessoa no Azure DevOps, somente leitura (`vso.work`, `vso.project`, `vso.profile`). O portal não usa PAT compartilhado. O token limita quais projetos ela enxerga. A permissão do portal limita o que ela pode configurar.
 
-Quem não está no grupo de administradores não habilita projeto, não publica mapa e não muda o status do workspace.
+Quem não tem a permissão de administrador não habilita projeto, não publica mapa e não muda o status do workspace.
 
 ---
 
@@ -113,13 +113,19 @@ O mapa publicado guarda, por repositório: nome, URL no Azure DevOps, status (`a
 
 `local_path` não é gravado, mesmo que venha no YAML importado.
 
-A cópia publicada no portal é a que a conversa, a pipeline e o ingest usam. O YAML do playbook serve só para a importação inicial. Cada publicação grava autor e data.
+A importação é um upload do YAML no painel. A mesma tela exporta um modelo vazio e mostra a instrução do que é cada campo: organização, projeto, branch de referência padrão, perfil de indexação (`minimal`, `standard`, `full`) e, por repositório, nome, URL, status (`active`, `legacy`, `discontinued`), branch, descrição, stack e donos. A instrução diz que `local_path` é ignorado.
+
+O upload preenche o mapa. Não publica sozinho e não conclui as outras etapas. A pessoa revisa os campos e publica numa ação separada.
+
+A cópia publicada no portal é a que a conversa, a pipeline e o ingest usam. O YAML do playbook serve só para essa importação inicial. Cada publicação grava autor e data.
 
 Sem publicação do mapa e sem a declaração de dispensa, o workspace permanece `em configuração`.
 
 ## RG06 — Nomear o responsável
 
-O administrador nomeia uma pessoa responsável pelo workspace. Sem responsável nomeado, o workspace permanece `em configuração`.
+O administrador define o responsável no painel, no próprio workspace. O valor não vem de grupo nem de atributo fixo do Entra ID. A escolha fica gravada no workspace.
+
+Sem responsável definido nesse campo, o workspace permanece `em configuração`.
 
 ## RG07 — Status disponível
 
@@ -149,9 +155,9 @@ A dependência não substitui as cinco etapas e não torna o workspace `disponí
 
 ## RG11 — Desempenho da lista
 
-A lista de projetos e a lista de repositórios do mapa são paginadas. A tela não carrega todos os projetos da organização nem todos os repositórios do workspace de uma vez.
+A lista de projetos e a lista de repositórios do mapa abrem com 10 itens. A pessoa pode mudar a página para 30 ou 50. Não há outro tamanho.
 
-O tamanho da página não está definido. Ver Observações.
+A tela não carrega todos os projetos da organização nem todos os repositórios do workspace de uma vez. Trocar o tamanho pede de novo só a página visível.
 
 ---
 
@@ -168,9 +174,6 @@ O tamanho da página não está definido. Ver Observações.
 # Observações
 
 * User Stories desta Feature só saem depois da aprovação do negócio, conforme `playbooks/feature-refinement.md` e a skill `requirements-analyst`.
-* Lacuna: nome do grupo do Entra ID que administra o portal.
-* Lacuna: tamanho da página das listas de projetos e de repositórios.
-* Lacuna: o que identifica o responsável do workspace (conta Entra ID, e-mail ou outro atributo). A regra exige uma pessoa nomeada; o atributo gravado não está definido.
-* Lacuna: se a importação inicial é um upload do YAML no painel ou uma carga feita fora da tela. O plano fixa que o YAML é só a semente e que a cópia publicada é a fonte. O gesto de importar não está definido.
+* Lacuna: como nasce a primeira permissão de administrador, já que ela não vem de um grupo do Entra ID.
 * O protótipo Figma desta tela ainda não existe. O link da tela entra na Feature quando o quadro estiver desenhado.
 * Não criar o work item no Azure DevOps a partir deste rascunho sem ação explícita de uma pessoa.
