@@ -167,6 +167,8 @@ Essa permissão não pode ser renomeada, ter o que ela permite alterado, nem ser
 
 Atribuir ou retirar a permissão de uma pessoa não edita a permissão. Só muda quem a possui.
 
+Na primeira instalação, a permissão administrador fica atribuída à conta cujo e-mail de login no Entra ID é `ps.brunoe@aguiabranca.com.br`. Outro e-mail não recebe essa atribuição inicial. Depois da instalação, atribuir ou retirar segue a regra acima.
+
 Editor, aprovador e leitor não seguem essa trava.
 
 ---
@@ -184,6 +186,5 @@ Editor, aprovador e leitor não seguem essa trava.
 # Observações
 
 * User Stories desta Feature só saem depois da aprovação do negócio, conforme `playbooks/feature-refinement.md` e a skill `requirements-analyst`.
-* Lacuna: quem recebe a permissão administrador na primeira instalação, já que a permissão existe vazia até alguém ser atribuído.
 * O protótipo Figma desta tela ainda não existe. O link da tela entra na Feature quando o quadro estiver desenhado.
 * Não criar o work item no Azure DevOps a partir deste rascunho sem ação explícita de uma pessoa.
