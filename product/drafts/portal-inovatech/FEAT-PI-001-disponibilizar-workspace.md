@@ -62,9 +62,9 @@ Permitir que um administrador publique um workspace por projeto do Azure DevOps,
 
 # Quem pode fazer
 
-Pessoa com a permissão de administrador gravada no portal.
+Pessoa que possui a permissão de sistema administrador.
 
-O Entra ID só autentica. A permissão de administrador, editor, aprovador e leitor fica no controle do próprio portal, no Supabase. Não há grupo do Entra ID para essas permissões.
+O Entra ID só autentica. Editor, aprovador e leitor ficam no controle do próprio portal, no Supabase, e podem ser editados. A permissão administrador não entra nessa lista editável. Não há grupo do Entra ID para essas permissões.
 
 A lista de projetos usa o access token dessa pessoa no Azure DevOps, somente leitura (`vso.work`, `vso.project`, `vso.profile`). O portal não usa PAT compartilhado. O token limita quais projetos ela enxerga. A permissão do portal limita o que ela pode configurar.
 
@@ -159,6 +159,16 @@ A lista de projetos e a lista de repositórios do mapa abrem com 10 itens. A pes
 
 A tela não carrega todos os projetos da organização nem todos os repositórios do workspace de uma vez. Trocar o tamanho pede de novo só a página visível.
 
+## RG12 — Permissão administrador do sistema
+
+O portal já inclui a permissão administrador. Ela não nasce de cadastro na tela.
+
+Essa permissão não pode ser renomeada, ter o que ela permite alterado, nem ser excluída. A tela não oferece essas ações para ela.
+
+Atribuir ou retirar a permissão de uma pessoa não edita a permissão. Só muda quem a possui.
+
+Editor, aprovador e leitor não seguem essa trava.
+
 ---
 
 # Aprovação
@@ -174,6 +184,6 @@ A tela não carrega todos os projetos da organização nem todos os repositório
 # Observações
 
 * User Stories desta Feature só saem depois da aprovação do negócio, conforme `playbooks/feature-refinement.md` e a skill `requirements-analyst`.
-* Lacuna: como nasce a primeira permissão de administrador, já que ela não vem de um grupo do Entra ID.
+* Lacuna: quem recebe a permissão administrador na primeira instalação, já que a permissão existe vazia até alguém ser atribuído.
 * O protótipo Figma desta tela ainda não existe. O link da tela entra na Feature quando o quadro estiver desenhado.
 * Não criar o work item no Azure DevOps a partir deste rascunho sem ação explícita de uma pessoa.
