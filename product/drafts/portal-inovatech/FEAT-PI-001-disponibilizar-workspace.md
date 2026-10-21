@@ -66,7 +66,7 @@ Pessoa que possui a permissão de sistema administrador.
 
 O Entra ID só autentica. Editor, aprovador e leitor ficam no controle do próprio portal, no Supabase, e podem ser editados. A permissão administrador não entra nessa lista editável. Não há grupo do Entra ID para essas permissões.
 
-A lista de projetos usa o access token dessa pessoa no Azure DevOps, somente leitura (`vso.work`, `vso.project`, `vso.profile`). O portal não usa PAT compartilhado. O token limita quais projetos ela enxerga. A permissão do portal limita o que ela pode configurar.
+A lista de projetos usa o access token delegado do Entra ID dessa pessoa, somente leitura (`vso.work`, `vso.project`, `vso.profile`). Não existe PAT, nem pessoal nem compartilhado, nem campo para informar token. O que ela enxerga no Azure DevOps é a permissão que o Entra ID já concede a ela. A permissão do portal limita o que ela pode configurar.
 
 Quem não tem a permissão de administrador não habilita projeto, não publica mapa e não muda o status do workspace.
 
