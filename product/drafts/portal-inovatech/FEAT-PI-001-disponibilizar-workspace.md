@@ -2,7 +2,7 @@
 
 Rascunho do Portal Inovatech. Ainda não existe work item no Azure DevOps. Este arquivo não cria nem altera item no backlog.
 
-Origem das regras: plano de produto do Portal Inovatech. Onde o plano não fixa um valor, a lacuna está em Observações.
+Origem das regras: plano de produto do Portal Inovatech. Aprovada pelo negócio em 21/10/2026.
 
 ---
 
@@ -177,14 +177,14 @@ Editor, aprovador e leitor não seguem essa trava.
 
 | Campo | Valor |
 | --- | --- |
-| Status | [ ] Aprovada pelo negócio |
-| Data | |
-| Responsável (negócio) | |
+| Status | [x] Aprovada pelo negócio |
+| Data | 21/10/2026 |
+| Responsável (negócio) | ps.brunoe@aguiabranca.com.br |
 
 ---
 
 # Observações
 
-* User Stories desta Feature só saem depois da aprovação do negócio, conforme `playbooks/feature-refinement.md` e a skill `requirements-analyst`.
+* User Stories derivadas após a aprovação: US-FEAT-PI-001-01 a US-FEAT-PI-001-06, nesta pasta. A divisão separa permissão, habilitação, processo e area path, mapa, conclusão do status e dependência entre workspaces, porque cada uma se implementa e se testa sem as outras.
 * O protótipo Figma desta tela ainda não existe. O link da tela entra na Feature quando o quadro estiver desenhado.
 * Não criar o work item no Azure DevOps a partir deste rascunho sem ação explícita de uma pessoa.
