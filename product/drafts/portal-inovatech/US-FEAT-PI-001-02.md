@@ -56,6 +56,10 @@ A lista abre com 10 projetos. A pessoa pode mudar o tamanho para 30 ou para 50. 
 
 O nome do projeto exibido vem do Azure DevOps. O código do portal não contém nome de projeto fixo.
 
+## RN08
+
+Habilitar abre um modal de confirmação sobre os projetos selecionados na lista. Não há tela própria para essa ação. A mesma ação fica na tela de detalhe do workspace. Se o projeto já tem workspace, o erro também é um modal e o workspace existente permanece.
+
 ---
 
 # Critérios de Aceite
