@@ -15,7 +15,7 @@ Origem das regras: plano de produto do Portal Inovatech. Aprovada pelo negócio 
 
 ## Artefatos
 
-* Protótipo / imagem da tela: ainda não desenhado. Arquivo Figma previsto: https://www.figma.com/design/ih1UFMUzvt3HiW7hy7T3ej/Portal-Inova%C3%A7%C3%A3o?node-id=0-1
+* Protótipo / imagem da tela: [Configuração do workspace](https://www.figma.com/design/ih1UFMUzvt3HiW7hy7T3ej/Portal-Inova%C3%A7%C3%A3o?node-id=64-2456). Os demais quadros estão em Observações.
 * Fluxo: as cinco etapas obrigatórias abaixo, nesta ordem de conclusão. A ordem em que o administrador preenche pode variar; o status `disponível` só sai quando as cinco estão concluídas.
 * Documento complementar: `project-context/templates/project-map.yaml` e `project-context/schemas/project-map.schema.json`, somente como modelo da importação inicial.
 
@@ -189,10 +189,7 @@ Editor, aprovador e leitor não seguem essa trava.
 * Protótipo desta Feature no arquivo Portal Inovação, com instâncias `Design/`. Nomes de projeto no quadro são Alfa e Beta.
   * [Lista de projetos](https://www.figma.com/design/ih1UFMUzvt3HiW7hy7T3ej/Portal-Inova%C3%A7%C3%A3o?node-id=17-1233)
   * [Erro ao habilitar de novo](https://www.figma.com/design/ih1UFMUzvt3HiW7hy7T3ej/Portal-Inova%C3%A7%C3%A3o?node-id=17-1317)
-  * [Workspace em configuração](https://www.figma.com/design/ih1UFMUzvt3HiW7hy7T3ej/Portal-Inova%C3%A7%C3%A3o?node-id=17-1372)
-  * [Mapa do projeto](https://www.figma.com/design/ih1UFMUzvt3HiW7hy7T3ej/Portal-Inova%C3%A7%C3%A3o?node-id=19-1421)
-  * [Responsável](https://www.figma.com/design/ih1UFMUzvt3HiW7hy7T3ej/Portal-Inova%C3%A7%C3%A3o?node-id=19-1478)
+  * [Configuração do workspace](https://www.figma.com/design/ih1UFMUzvt3HiW7hy7T3ej/Portal-Inova%C3%A7%C3%A3o?node-id=64-2456): processo, area paths, mapa, responsável e dependências numa só tela, com um único Salvar e o aviso das etapas que faltam.
   * [Permissões](https://www.figma.com/design/ih1UFMUzvt3HiW7hy7T3ej/Portal-Inova%C3%A7%C3%A3o?node-id=19-1530)
-  * [Dependência de repositório](https://www.figma.com/design/ih1UFMUzvt3HiW7hy7T3ej/Portal-Inova%C3%A7%C3%A3o?node-id=19-1581)
   * [Sem permissão no Azure DevOps](https://www.figma.com/design/ih1UFMUzvt3HiW7hy7T3ej/Portal-Inova%C3%A7%C3%A3o?node-id=19-1745)
 * Não criar o work item no Azure DevOps a partir deste rascunho sem ação explícita de uma pessoa.

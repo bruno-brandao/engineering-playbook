@@ -102,7 +102,7 @@ Então a etapa do mapa aparece pendente e o status continua `em configuração`
 
 ## CA05
 
-Dado que a tela de mapa está aberta
+Dado que a seção Mapa da tela de configuração do workspace está aberta
 
 Quando o administrador exporta o modelo
 
