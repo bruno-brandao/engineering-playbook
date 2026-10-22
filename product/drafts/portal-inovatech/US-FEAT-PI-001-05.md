@@ -34,7 +34,7 @@ Somente quem possui a permissão administrador define o responsável e desfaz um
 
 ## RN02
 
-O responsável é escolhido no painel, no próprio workspace, e fica gravado nesse workspace. O valor não é lido de grupo nem de atributo fixo do Entra ID.
+O responsável é escolhido no painel, no próprio workspace, entre as pessoas que já entraram no portal, e fica gravado nesse workspace. E-mail ou nome sem entrada correspondente no portal não é gravado. O valor não é lido de grupo nem de atributo fixo do Entra ID.
 
 ## RN03
 
@@ -111,6 +111,14 @@ Dado que Alfa está `em configuração`
 Quando uma chamada de conversa, busca ou sessão envia o `workspace_id` de Alfa
 
 Então a API rejeita a chamada
+
+## CA07
+
+Dado que Maria já entrou no portal e `nao.entrou@aguiabranca.com.br` nunca entrou
+
+Quando o administrador escolhe Maria como responsável de Alfa e, em outra tentativa, informa `nao.entrou@aguiabranca.com.br`
+
+Então Maria fica gravada como responsável e o e-mail sem entrada no portal não é gravado
 
 ---
 

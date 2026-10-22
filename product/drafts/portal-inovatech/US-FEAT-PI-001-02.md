@@ -46,7 +46,7 @@ Existir no resultado de `GET /_apis/projects` não cria workspace e não coloca 
 
 ## RN05
 
-Ao habilitar, o portal cria um workspace com status `em configuração`. O identificador é o par organização + projeto lidos do Azure DevOps. Um segundo habilitamento do mesmo par não cria outro workspace.
+Ao habilitar, o portal cria um workspace com status `em configuração`. O identificador é o par organização + projeto lidos do Azure DevOps. Se esse par já tem workspace, a API recusa a ação com erro e mantém o workspace existente.
 
 ## RN06
 
@@ -98,7 +98,7 @@ Dado que o workspace Alfa já existe
 
 Quando a pessoa habilita Alfa de novo
 
-Então continua existindo um único workspace para essa organização e esse projeto
+Então a API recusa a ação com erro e continua existindo um único workspace para essa organização e esse projeto
 
 ## CA06
 

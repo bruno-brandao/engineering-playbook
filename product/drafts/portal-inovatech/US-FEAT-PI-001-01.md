@@ -38,7 +38,7 @@ A tela não oferece renomear a permissão administrador, alterar o que ela permi
 
 ## RN03
 
-Atribuir ou retirar a permissão administrador de uma pessoa grava só o vínculo da pessoa. A definição da permissão permanece a mesma.
+Atribuir ou retirar a permissão administrador de uma pessoa grava só o vínculo da pessoa. A definição da permissão permanece a mesma. Somente quem já possui a permissão administrador faz essa atribuição ou retirada.
 
 ## RN04
 
@@ -87,6 +87,14 @@ Dado que um administrador retira a permissão administrador de uma pessoa e atri
 Quando a definição da permissão é consultada
 
 Então o nome e o que ela permite continuam os da instalação, e só o vínculo das pessoas mudou
+
+## CA05
+
+Dado que a pessoa autenticada não possui a permissão administrador
+
+Quando ela tenta atribuir ou retirar essa permissão de outra pessoa
+
+Então a API recusa a ação e os vínculos permanecem os mesmos
 
 ---
 

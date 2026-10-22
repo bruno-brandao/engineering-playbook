@@ -84,7 +84,7 @@ Exemplo: o projeto "Alfa" na organização configurada no ambiente vira um works
 
 O administrador escolhe um projeto que o token dele lê e habilita a integração com o playbook. Existir no `GET /_apis/projects` não publica o workspace e não o coloca no seletor de conversas.
 
-Ao habilitar, o workspace nasce com status `em configuração`.
+Ao habilitar, o workspace nasce com status `em configuração`. Se o par organização + projeto já tem workspace, a API recusa a ação com erro e mantém o workspace existente.
 
 ## RG03 — Confirmar o mapa do processo
 
@@ -123,7 +123,7 @@ Sem publicação do mapa e sem a declaração de dispensa, o workspace permanece
 
 ## RG06 — Nomear o responsável
 
-O administrador define o responsável no painel, no próprio workspace. O valor não vem de grupo nem de atributo fixo do Entra ID. A escolha fica gravada no workspace.
+O administrador define o responsável no painel, no próprio workspace, escolhendo uma pessoa que já entrou no portal. E-mail ou nome que não corresponda a uma pessoa que já entrou não é gravado. O valor não vem de grupo nem de atributo fixo do Entra ID. A escolha fica gravada no workspace.
 
 Sem responsável definido nesse campo, o workspace permanece `em configuração`.
 
@@ -165,7 +165,7 @@ O portal já inclui a permissão administrador. Ela não nasce de cadastro na te
 
 Essa permissão não pode ser renomeada, ter o que ela permite alterado, nem ser excluída. A tela não oferece essas ações para ela.
 
-Atribuir ou retirar a permissão de uma pessoa não edita a permissão. Só muda quem a possui.
+Atribuir ou retirar a permissão de uma pessoa não edita a permissão. Só muda quem a possui. Somente quem já possui a permissão administrador faz essa atribuição ou retirada. Quem não a possui recebe recusa da API.
 
 Na primeira instalação, a permissão administrador fica atribuída à conta cujo e-mail de login no Entra ID é `ps.brunoe@aguiabranca.com.br`. Outro e-mail não recebe essa atribuição inicial. Depois da instalação, atribuir ou retirar segue a regra acima.
 
