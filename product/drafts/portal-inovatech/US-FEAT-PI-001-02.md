@@ -22,7 +22,7 @@
 
 Entregar a lista paginada dos projetos que o token da pessoa lê no Azure DevOps e a ação de habilitar um projeto como workspace em configuração.
 
-Fora desta US: confirmar processo, marcar area path, publicar mapa, nomear responsável e abrir conversa.
+Fora desta US: confirmar processo, publicar mapa, nomear responsável e abrir conversa. Area path não é etapa de configuração.
 
 ---
 

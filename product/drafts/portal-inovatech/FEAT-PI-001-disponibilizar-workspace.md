@@ -16,7 +16,7 @@ Origem das regras: plano de produto do Portal Inovatech. Aprovada pelo negócio 
 ## Artefatos
 
 * Protótipo / imagem da tela: [Configuração do workspace](https://www.figma.com/design/ih1UFMUzvt3HiW7hy7T3ej/Portal-Inova%C3%A7%C3%A3o?node-id=64-2456). Os demais quadros estão em Observações.
-* Fluxo: as cinco etapas obrigatórias abaixo, nesta ordem de conclusão. A ordem em que o administrador preenche pode variar; o status `disponível` só sai quando as cinco estão concluídas.
+* Fluxo: as quatro etapas obrigatórias abaixo. A ordem em que o administrador preenche pode variar; o status `disponível` só sai quando as quatro estão concluídas. Area path e sprint não são etapas: vêm do Azure DevOps na consulta.
 * Documento complementar: `project-context/templates/project-map.yaml` e `project-context/schemas/project-map.schema.json`, somente como modelo da importação inicial.
 
 ---
@@ -27,7 +27,7 @@ O Portal Inovatech atende qualquer projeto do Azure DevOps da organização conf
 
 Hoje o mapa de repositórios, branch e donos vive em `project-map.yaml` no engineering-playbook. Esse arquivo inclui `local_path`, que é caminho de máquina de quem desenvolve. A conversa, a pipeline e o ingest não podem depender desse arquivo nem desse caminho.
 
-Sem uma configuração publicada por workspace, uma conversa poderia consultar projeto, repositório ou area path que o administrador ainda não liberou.
+Sem uma configuração publicada por workspace, uma conversa poderia consultar projeto ou repositório que o administrador ainda não liberou. Area path e sprint não entram nessa liberação: a consulta usa o que o token da pessoa já lê no Azure DevOps.
 
 ---
 
@@ -43,7 +43,7 @@ Permitir que um administrador publique um workspace por projeto do Azure DevOps,
 
 * Painel de admin do Portal Inovatech.
 * Lista dos projetos que o token do administrador lê no Azure DevOps.
-* Habilitação do projeto, confirmação do mapa do processo, marcação de area paths, publicação do mapa do projeto e nomeação do responsável.
+* Habilitação do projeto, confirmação do mapa do processo, publicação do mapa do projeto e nomeação do responsável.
 * Status `em configuração` e `disponível`.
 * Importação inicial por upload de `project-map.yaml` na tela, com exportação de modelo e instrução de cada campo. `local_path` não é gravado.
 * Declaração explícita de que a conversa ainda não consulta código.
@@ -94,11 +94,11 @@ O portal lê esse mapa do processo do projeto. Feature, User Story e Product Bac
 
 Sem essa confirmação, o workspace permanece `em configuração`.
 
-## RG04 — Marcar area paths
+## RG04 — Area path e sprint vêm do Azure DevOps
 
-O administrador marca quais area paths a conversa daquele workspace pode usar. Area path não marcado não entra em conversa, busca nem sessão desse workspace.
+O portal não guarda uma lista de area paths marcada pelo administrador e não pede configuração a cada sprint.
 
-A lista de area paths vem do Azure DevOps com o token do administrador. Sem ao menos um area path marcado, o workspace permanece `em configuração`.
+Conversa, busca, sessão e dashboard usam, na hora da consulta, os area paths e o sprint que o token da pessoa já lê naquele projeto. Um area path novo ou uma sprint nova aparecem sem alguém reabrir a configuração do workspace.
 
 ## RG05 — Publicar o mapa do projeto ou dispensar código
 
@@ -129,7 +129,7 @@ Sem responsável definido nesse campo, o workspace permanece `em configuração`
 
 ## RG07 — Status disponível
 
-O workspace passa a `disponível` somente quando as cinco etapas estão concluídas: projeto habilitado, mapa do processo confirmado, ao menos um area path marcado, mapa publicado ou código dispensado, e responsável nomeado.
+O workspace passa a `disponível` somente quando as quatro etapas estão concluídas: projeto habilitado, mapa do processo confirmado, mapa publicado ou código dispensado, e responsável nomeado.
 
 Se o administrador desfaz uma etapa, o status volta para `em configuração` na hora. Conversa, busca e sessão daquele workspace deixam de abrir.
 
@@ -151,7 +151,7 @@ Toda conversa, rascunho, parecer, documento indexado e chamada de IA de uma func
 
 Um repositório de outro workspace não entra na consulta deste. O administrador pode criar uma dependência explícita, com justificativa e com o controle de acesso dessa dependência. Até essa dependência existir, a busca não consulta nem menciona esse repositório.
 
-A dependência não substitui as cinco etapas e não torna o workspace `disponível` sozinha.
+A dependência não substitui as quatro etapas e não torna o workspace `disponível` sozinha.
 
 ## RG11 — Desempenho da lista
 
@@ -185,11 +185,11 @@ Editor, aprovador e leitor não seguem essa trava.
 
 # Observações
 
-* User Stories derivadas após a aprovação: US-FEAT-PI-001-01 a US-FEAT-PI-001-06, nesta pasta. A divisão separa permissão, habilitação, processo e area path, mapa, conclusão do status e dependência entre workspaces, porque cada uma se implementa e se testa sem as outras.
+* User Stories derivadas após a aprovação: US-FEAT-PI-001-01 a US-FEAT-PI-001-06, nesta pasta. A divisão separa permissão, habilitação, processo, mapa, conclusão do status e dependência entre workspaces, porque cada uma se implementa e se testa sem as outras. Area path não é etapa de configuração.
 * Protótipo desta Feature no arquivo Portal Inovação, com instâncias `Design/`. Nomes de projeto no quadro são Alfa e Beta.
   * [Lista de projetos](https://www.figma.com/design/ih1UFMUzvt3HiW7hy7T3ej/Portal-Inova%C3%A7%C3%A3o?node-id=17-1233)
   * [Erro ao habilitar de novo](https://www.figma.com/design/ih1UFMUzvt3HiW7hy7T3ej/Portal-Inova%C3%A7%C3%A3o?node-id=17-1317)
-  * [Configuração do workspace](https://www.figma.com/design/ih1UFMUzvt3HiW7hy7T3ej/Portal-Inova%C3%A7%C3%A3o?node-id=64-2456): processo, area paths, mapa, responsável e dependências numa só tela, com um único Salvar e o aviso das etapas que faltam.
+  * [Configuração do workspace](https://www.figma.com/design/ih1UFMUzvt3HiW7hy7T3ej/Portal-Inova%C3%A7%C3%A3o?node-id=64-2456): processo, mapa, responsável e dependências numa só tela, com um único Salvar e o aviso das etapas que faltam. Sem seção de area path.
   * [Permissões](https://www.figma.com/design/ih1UFMUzvt3HiW7hy7T3ej/Portal-Inova%C3%A7%C3%A3o?node-id=19-1530)
   * [Sem permissão no Azure DevOps](https://www.figma.com/design/ih1UFMUzvt3HiW7hy7T3ej/Portal-Inova%C3%A7%C3%A3o?node-id=19-1745)
 * Não criar o work item no Azure DevOps a partir deste rascunho sem ação explícita de uma pessoa.

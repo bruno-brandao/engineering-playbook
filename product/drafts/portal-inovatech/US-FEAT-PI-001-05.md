@@ -20,7 +20,7 @@
 
 # Escopo
 
-Gravar o responsável do workspace, calcular o status `disponível` a partir das cinco etapas e impedir conversa, busca e sessão enquanto o workspace não está disponível.
+Gravar o responsável do workspace, calcular o status `disponível` a partir das quatro etapas e impedir conversa, busca e sessão enquanto o workspace não está disponível.
 
 Fora desta US: implementar a conversa, a busca e a sessão. Esta US só recusa essas chamadas para workspace que não está `disponível`.
 
@@ -42,7 +42,7 @@ Sem responsável gravado, a etapa do responsável não está concluída e o work
 
 ## RN04
 
-O status passa a `disponível` somente quando as cinco etapas estão concluídas: projeto habilitado, mapa do processo confirmado, ao menos um area path marcado, mapa publicado ou código dispensado, e responsável gravado.
+O status passa a `disponível` somente quando as quatro etapas estão concluídas: projeto habilitado, mapa do processo confirmado, mapa publicado ou código dispensado, e responsável gravado. Area path e sprint não entram na conta.
 
 ## RN05
 
@@ -66,7 +66,7 @@ Com status `em configuração`, a API rejeita conversa, busca e sessão desse `w
 
 ## CA01
 
-Dado que as outras quatro etapas de Alfa estão concluídas e não há responsável
+Dado que as outras três etapas de Alfa estão concluídas e não há responsável
 
 Quando as etapas são consultadas
 
@@ -74,7 +74,7 @@ Então a etapa do responsável aparece pendente e o status continua `em configur
 
 ## CA02
 
-Dado que as cinco etapas de Alfa estão concluídas
+Dado que as quatro etapas de Alfa estão concluídas
 
 Quando o status é consultado
 
@@ -84,9 +84,9 @@ Então Alfa está `disponível`
 
 Dado que Alfa está `disponível`
 
-Quando o administrador remove o único area path marcado
+Quando o administrador desfaz a confirmação do processo
 
-Então Alfa volta para `em configuração` na mesma ação e o painel mostra a etapa de area path pendente
+Então Alfa volta para `em configuração` na mesma ação e o painel mostra a etapa de processo pendente
 
 ## CA04
 
@@ -128,11 +128,11 @@ Então Maria fica gravada como responsável e o e-mail sem entrada no portal nã
 
 ### Cenário
 
-Quatro etapas prontas e responsável ausente.
+Três etapas prontas e responsável ausente.
 
 ### Entrada
 
-Alfa habilitado, processo confirmado, area path A marcado, mapa publicado, responsável vazio.
+Alfa habilitado, processo confirmado, mapa publicado, responsável vazio.
 
 ### Resultado Esperado
 
