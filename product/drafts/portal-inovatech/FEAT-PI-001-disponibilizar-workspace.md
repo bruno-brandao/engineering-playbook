@@ -186,5 +186,13 @@ Editor, aprovador e leitor não seguem essa trava.
 # Observações
 
 * User Stories derivadas após a aprovação: US-FEAT-PI-001-01 a US-FEAT-PI-001-06, nesta pasta. A divisão separa permissão, habilitação, processo e area path, mapa, conclusão do status e dependência entre workspaces, porque cada uma se implementa e se testa sem as outras.
-* Protótipo desta Feature no arquivo Portal Inovação, com instâncias `Design/`: [lista de projetos](https://www.figma.com/design/ih1UFMUzvt3HiW7hy7T3ej/Portal-Inova%C3%A7%C3%A3o?node-id=17-1233), [erro ao habilitar de novo](https://www.figma.com/design/ih1UFMUzvt3HiW7hy7T3ej/Portal-Inova%C3%A7%C3%A3o?node-id=17-1317) e [workspace em configuração](https://www.figma.com/design/ih1UFMUzvt3HiW7hy7T3ej/Portal-Inova%C3%A7%C3%A3o?node-id=17-1372). Nomes de projeto no quadro são Alfa e Beta.
+* Protótipo desta Feature no arquivo Portal Inovação, com instâncias `Design/`. Nomes de projeto no quadro são Alfa e Beta.
+  * [Lista de projetos](https://www.figma.com/design/ih1UFMUzvt3HiW7hy7T3ej/Portal-Inova%C3%A7%C3%A3o?node-id=17-1233)
+  * [Erro ao habilitar de novo](https://www.figma.com/design/ih1UFMUzvt3HiW7hy7T3ej/Portal-Inova%C3%A7%C3%A3o?node-id=17-1317)
+  * [Workspace em configuração](https://www.figma.com/design/ih1UFMUzvt3HiW7hy7T3ej/Portal-Inova%C3%A7%C3%A3o?node-id=17-1372)
+  * [Mapa do projeto](https://www.figma.com/design/ih1UFMUzvt3HiW7hy7T3ej/Portal-Inova%C3%A7%C3%A3o?node-id=19-1421)
+  * [Responsável](https://www.figma.com/design/ih1UFMUzvt3HiW7hy7T3ej/Portal-Inova%C3%A7%C3%A3o?node-id=19-1478)
+  * [Permissões](https://www.figma.com/design/ih1UFMUzvt3HiW7hy7T3ej/Portal-Inova%C3%A7%C3%A3o?node-id=19-1530)
+  * [Dependência de repositório](https://www.figma.com/design/ih1UFMUzvt3HiW7hy7T3ej/Portal-Inova%C3%A7%C3%A3o?node-id=19-1581)
+  * [Sem permissão no Azure DevOps](https://www.figma.com/design/ih1UFMUzvt3HiW7hy7T3ej/Portal-Inova%C3%A7%C3%A3o?node-id=19-1745)
 * Não criar o work item no Azure DevOps a partir deste rascunho sem ação explícita de uma pessoa.
