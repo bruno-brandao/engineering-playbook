@@ -115,7 +115,7 @@ O mapa publicado guarda, por repositório: nome, URL no Azure DevOps, status (`a
 
 A importação é um upload do YAML no painel. A mesma tela exporta um modelo vazio e mostra a instrução do que é cada campo: organização, projeto, branch de referência padrão, perfil de indexação (`minimal`, `standard`, `full`) e, por repositório, nome, URL, status (`active`, `legacy`, `discontinued`), branch, descrição, stack e donos. A instrução diz que `local_path` é ignorado.
 
-O upload preenche o mapa. Não publica sozinho e não conclui as outras etapas. A pessoa revisa os campos e publica numa ação separada.
+O upload preenche o mapa. Não publica sozinho e não conclui as outras etapas. A pessoa revisa os campos na mesma tela: a lista mostra o resumo e a linha do repositório abre nome, URL, status, branch, stack, descrição e donos. Salvar grava o rascunho. Publicar continua sendo a ação que torna essa cópia a oficial.
 
 A cópia publicada no portal é a que a conversa, a pipeline e o ingest usam. O YAML do playbook serve só para essa importação inicial. Cada publicação grava autor e data.
 
@@ -188,7 +188,7 @@ Editor, aprovador e leitor não seguem essa trava.
 * User Stories derivadas após a aprovação: US-FEAT-PI-001-01 a US-FEAT-PI-001-06, nesta pasta. A divisão separa permissão, habilitação, processo, mapa, conclusão do status e dependência entre workspaces, porque cada uma se implementa e se testa sem as outras. Area path não é etapa de configuração.
 * Protótipo desta Feature no arquivo Portal Inovação, com instâncias `Design/`. Nomes de projeto no quadro são Alfa e Beta.
   * [Lista de projetos](https://www.figma.com/design/ih1UFMUzvt3HiW7hy7T3ej/Portal-Inova%C3%A7%C3%A3o?node-id=17-1233), com seleção na tabela. Habilitar é modal: [confirmar habilitação](https://www.figma.com/design/ih1UFMUzvt3HiW7hy7T3ej/Portal-Inova%C3%A7%C3%A3o?node-id=79-3240) e [projeto que já tem workspace](https://www.figma.com/design/ih1UFMUzvt3HiW7hy7T3ej/Portal-Inova%C3%A7%C3%A3o?node-id=79-3258).
-  * [Configuração do workspace](https://www.figma.com/design/ih1UFMUzvt3HiW7hy7T3ej/Portal-Inova%C3%A7%C3%A3o?node-id=64-2456): processo, mapa, responsável e dependências numa só tela. Habilitar projeto continua nesta tela, no [modal de confirmação](https://www.figma.com/design/ih1UFMUzvt3HiW7hy7T3ej/Portal-Inova%C3%A7%C3%A3o?node-id=79-3267). Atualizar documentação fica na lista de repositórios, com seleção, no [modal do repositório](https://www.figma.com/design/ih1UFMUzvt3HiW7hy7T3ej/Portal-Inova%C3%A7%C3%A3o?node-id=86-3086).
+  * [Configuração do workspace](https://www.figma.com/design/ih1UFMUzvt3HiW7hy7T3ej/Portal-Inova%C3%A7%C3%A3o?node-id=64-2456): processo, mapa, responsável e dependências numa só tela. A linha do repositório abre os campos em [api-alfa](https://www.figma.com/design/ih1UFMUzvt3HiW7hy7T3ej/Portal-Inova%C3%A7%C3%A3o?node-id=96-3019). Habilitar projeto continua nesta tela, no [modal de confirmação](https://www.figma.com/design/ih1UFMUzvt3HiW7hy7T3ej/Portal-Inova%C3%A7%C3%A3o?node-id=79-3267). Atualizar documentação fica na lista de repositórios, com seleção, no [modal do repositório](https://www.figma.com/design/ih1UFMUzvt3HiW7hy7T3ej/Portal-Inova%C3%A7%C3%A3o?node-id=86-3086).
   * [Permissões](https://www.figma.com/design/ih1UFMUzvt3HiW7hy7T3ej/Portal-Inova%C3%A7%C3%A3o?node-id=19-1530)
   * [Sem permissão no Azure DevOps](https://www.figma.com/design/ih1UFMUzvt3HiW7hy7T3ej/Portal-Inova%C3%A7%C3%A3o?node-id=19-1745)
 * Não criar o work item no Azure DevOps a partir deste rascunho sem ação explícita de uma pessoa.
